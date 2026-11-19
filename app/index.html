@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI · All 55 Trophies</title>
+<meta name="description" content="An offline GTA VI trophy guide and tracker: all 55 PS5 trophies with own-words guides, a platinum roadmap, missable flags and a saved checklist.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Grand Theft Auto VI · PlayStation 5</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="sub">All 55 trophies, with a guide for every one, a platinum roadmap and a checklist that saves itself. Works fully offline — your progress never leaves this browser.</p>
+    <div class="progress-wrap">
+      <div class="progress-head">
+        <span id="progressText">0 of 55 earned · 0% to platinum</span>
+        <span id="gradeCounts" class="grade-counts"></span>
+      </div>
+      <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="roadmap" class="roadmap" aria-label="Platinum roadmap">
+    <h2>Roadmap to the platinum</h2>
+    <p class="section-note">Four phases, in order. Ticking trophies off as you go keeps the progress bar honest — the long grinds are in Phase 2, so start them early.</p>
+    <div id="roadmapPhases" class="phases"></div>
+  </section>
+
+  <section class="controls" aria-label="Filters">
+    <div class="control-row">
+      <label class="search">Search
+        <input id="search" type="search" placeholder="Trophy name, mission or keyword…" autocomplete="off">
+      </label>
+      <label>Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Kind
+        <select id="kindFilter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="side">Side strands</option>
+          <option value="activity">Activities</option>
+          <option value="collectible">Collectibles</option>
+          <option value="combat">Combat &amp; crime</option>
+          <option value="misc">Misc</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="sortFilter">
+          <option value="id">Story order</option>
+          <option value="grade">Grade (best first)</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </label>
+    </div>
+    <div class="control-row toggles">
+      <label class="toggle"><input id="spoilerToggle" type="checkbox"> Hide story trophies until earned <span class="hint">(spoiler-safe)</span></label>
+      <label class="toggle"><input id="earnedOnly" type="checkbox"> Earned only</label>
+      <label class="toggle"><input id="missableOnly" type="checkbox"> Missable only</label>
+      <span class="spacer"></span>
+      <button id="exportBtn" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button" class="danger">Reset</button>
+    </div>
+    <p id="resultCount" class="result-count"></p>
+  </section>
+
+  <section id="cards" class="cards" aria-live="polite"></section>
+  <p id="emptyState" class="empty-state" hidden>No trophies match these filters. Clear the search or widen a filter.</p>
+
+  <section class="sources-note">
+    <h2>About this guide</h2>
+    <p>Trophy names, descriptions and grades are the official PlayStation 5 trophy list for Grand Theft Auto VI. Every guide on this page is written in our own words from those official descriptions and the game's own systems — nothing is copied from another guide. Where a guide draws on community knowledge, its sources are listed on the trophy itself (official PS5 trophy list, PSNProfiles, Exophase, PowerPyx). Difficulty and missable flags are our own judgement from the official descriptions: story trophies unlock by playing the story, and only a handful of one-off moments can be missed — those are flagged, with a save-or-replay note.</p>
+    <p>Progress is stored only in this browser (localStorage). Export it to keep a backup, import it to restore it on another machine.</p>
+  </section>
+</main>
+
+<div id="detailModal" class="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+    <button id="detailClose" type="button" class="modal-close" aria-label="Close">×</button>
+    <div id="detailBody"></div>
+  </div>
+</div>
+
+<footer>
+  <p>Leonida Trophy Guide — an unofficial fan guide. Not affiliated with Rockstar Games or PlayStation. No Rockstar artwork or logos are used here.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
